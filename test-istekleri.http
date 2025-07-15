@@ -1,0 +1,12 @@
+
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "ad": "Tugce",
+    "soyad": "Pehlivan",
+    "numara": 123,
+    "role": "ogrenci",
+    "sinifId": 1
+}
