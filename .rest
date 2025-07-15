@@ -1,0 +1,47 @@
+
+GET http://localhost:3000/
+
+GET http://localhost:3000/users
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "ad": "Tugce",
+    "soyad":"pehlivan",
+    "numara": 1217,
+    "role": "ogrenci",
+    "sinifId": 1
+}
+
+GET http://localhost:3000/users/1
+
+
+
+DELETE http://localhost:3000/users/1
+
+
+GET http://localhost:3000/ders
+
+POST http://localhost:3000/ders
+Content-Type: application/json
+
+{
+    "ad": "mat",
+    "kodu": "MAT101",
+    "ogretmenId": 5
+}
+
+POST http://localhost:3000/ders/1/ogrenciler/1
+
+
+POST http://localhost:3000/devamsizlik
+Content-Type: application/json
+
+{
+    "tarih": "2025-07-15",
+    "ogrenciId": 1,
+    "dersId": 1
+}
+
+GET http://localhost:3000/devamsizlik

@@ -17,7 +17,7 @@ const usersRouter = require("./routes/user");
 app.use("/users", usersRouter);
 
 const dersRouter = require("./routes/ders");
-app.use("/dersler", dersRouter);
+app.use("/ders", dersRouter);
 
 const devamsizlikRouter = require("./routes/devamsizlik");
 app.use("/devamsizlik", devamsizlikRouter);
