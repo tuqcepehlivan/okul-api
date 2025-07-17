@@ -1,3 +1,5 @@
+
+
 'use strict';
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -23,33 +25,35 @@ module.exports = {
         allowNull: false
       },
       role: {
-        type: Sequelize.ENUM("student", "teacher"),
+        type: Sequelize.ENUM('student', 'teacher'),
         allowNull: false
       },
       password: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      
-      classroomId: {
+      ClassroomId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Classrooms",
-          key: "id",
+          model: 'Classrooms',
+          key: 'id'
         },
-        onUpdate: "CASCADE",
-        onDelete: "SET NULL",
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL'
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW')
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW')
       }
     });
   },
+
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Users');
   }

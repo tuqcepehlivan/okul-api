@@ -2,14 +2,14 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Devamsızlıks', {
+    await queryInterface.createTable('Attendances', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ogrenciId: {
+      studentId: {
         type: Sequelize.INTEGER,
         references: {
           model: "Users",
@@ -18,7 +18,7 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "SET NULL"
       },
-      dersId: {
+      courseId: {
         type: Sequelize.INTEGER,
         references: {
           model: "Ders",
@@ -28,11 +28,11 @@ module.exports = {
         onDelete: "SET NULL"
 
       },
-      tarih: {
+      date: {
         type: Sequelize.DATE,
         allowNull: false
       },
-      durum: {
+      condition: {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
@@ -47,6 +47,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Devamsizliks');
+    await queryInterface.dropTable('Attendances');
   }
 };

@@ -16,14 +16,14 @@ app.listen(PORT, () => {
 const usersRouter = require("./routes/user");
 app.use("/users", usersRouter);
 
-const dersRouter = require("./routes/ders");
-app.use("/ders", dersRouter);
+const courseRouter = require("./routes/course");
+app.use("/course", courseRouter);
 
-const devamsizlikRouter = require("./routes/devamsizlik");
-app.use("/devamsizlik", devamsizlikRouter);
+const attendanceRouter = require("./routes/attendance");
+app.use("/attendance", attendanceRouter);
 
-const sinifRouter = require("./routes/sinif");
-app.use("/sinif", sinifRouter);
+const classroomRouter = require("./routes/classroom");
+app.use("/classroom", classroomRouter);
 
 const authRouter = require("./routes/auth");
 app.use("/auth", authRouter);
